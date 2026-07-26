@@ -29,30 +29,23 @@ with canonical and absolute social-image URLs.
 
 ---
 
-## 2. Make the contact form receive real submissions (free)
+## 2. Contact form — live submissions
 
-GitHub Pages is static — it cannot send email on its own. The form is already wired to
+GitHub Pages is static — it cannot send email on its own. The form is wired to
 **Web3Forms**, which forwards submissions straight to your inbox. Free tier: 250
-submissions/month, no account needed, no backend.
+submissions/month, no backend.
 
-**Until you complete this, the form falls back to opening the visitor's email client
-with a pre-filled draft to support@njinius.com.** It works, but real submissions are
-better — they arrive even if the visitor has no mail client configured.
+**This is already done** — the access key `667740cc-…-4ee4cd501dfd` is baked into
+`index.html`, so submissions arrive at the address registered with that key as soon as
+the site is live. Nothing further to configure.
 
-### Setup (about 2 minutes)
+Send yourself a test message after deploying to confirm the delivery address.
 
-1. Go to **https://web3forms.com**.
-2. Enter `support@njinius.com` in the "Create Access Key" box and submit.
-3. Check that inbox — Web3Forms emails you an **access key** (a UUID like
-   `2f1a4c9e-7b6d-4e3f-8a12-9c0b5d7e6f42`).
-4. Open `docs/index.html` in any text editor and find-and-replace **all occurrences** of
+### If you ever need to change the key
 
-   ```
-   WEB3FORMS_ACCESS_KEY_HERE
-   ```
-
-   with your real access key. (It appears twice.)
-5. Commit and push. Submissions now arrive at support@njinius.com.
+Find the UUID `667740cc-8618-40e8-89fe-4ee4cd501dfd` in `docs/index.html` and replace it
+with the new one. It appears once. (The code checks the value is a valid UUID; if it is
+not, the form falls back to opening a pre-filled email draft to support@njinius.com.)
 
 ### What the visitor sees
 
@@ -107,10 +100,11 @@ move the hosting. The field names sent are `first_name`, `last_name`, `email`, `
 - Keep the JSON-LD company details matching Companies House
   (NJINIUS LTD, no. 15598424, 210 Tonge Moor Road, Bolton BL2 2HN).
 
-## 5. Known external dependencies
+## 5. External dependencies
 
-- The five Digital Logbook screenshots load from `assets.zyrosite.com` (your current
-  njinius.com CDN). Send the PNGs and they can be hosted in `docs/` instead.
+The five Digital Logbook screenshots are **inlined into `index.html`** — nothing loads
+from an external CDN. The only outbound requests are:
+
 - Fonts (Rubik, Hanken Grotesk) load from Google Fonts.
 - The hero uses the brand gradient only — the image drop-target is removed from the
   build. Send the workplace photo or video and it can be baked in.
@@ -118,5 +112,5 @@ move the hosting. The field names sent are `first_name`, `last_name`, `email`, `
 ## 6. Re-generating
 
 The source of truth is `njinius.com.dc.html` in the project root; `docs/` is generated
-from it. Edit the source, then ask for a rebuild — remember to re-apply your Web3Forms
-access key afterwards (step 2.4).
+from it. Edit the source, then ask for a rebuild — the Web3Forms key is stored in the
+source, so it survives rebuilds.
