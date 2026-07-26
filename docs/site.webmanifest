@@ -2,7 +2,7 @@
   "name": "NJinius",
   "short_name": "NJinius",
   "description": "A UK product developer identifying gaps in the market and building secure, sustainable digital products.",
-  "start_url": "./",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#0D1517",
   "theme_color": "#111B1E",
