@@ -1,0 +1,69 @@
+/* ==========================================================================
+   njinius — slate brand theme
+   The design system ships a coral ramp; the supplied logo artwork is a dark
+   slate-teal (#385860). This retunes the brand ramp, neutrals and brand
+   shadows to that colour so every DS component follows the logo. The ramp
+   variable NAMES stay (--coral-*) so DS components pick the change up with
+   no component edits; the VALUES are slate.
+   ========================================================================== */
+:root {
+  /* Brand ramp — anchored on the logo's #385860 (500 = action colour) */
+  --coral-50:  #EEF4F5;
+  --coral-100: #D9E5E7;
+  --coral-200: #B6CBD0;
+  --coral-300: #86A9B2;
+  --coral-400: #5A8791;
+  --coral-500: #385860;
+  --coral-600: #2E484F;
+  --coral-700: #24393E;
+  --coral-800: #1A2A2E;
+  --coral-900: #111E21;
+
+  /* Secondary accent — a lighter steel drawn from the same hue family */
+  --apricot-100: #E8EFF0;
+  --apricot-200: #CFDEE1;
+  --apricot-300: #AFC6CC;
+  --apricot-400: #8AAAB2;
+  --apricot-500: #6B9099;
+
+  /* Washes & marketing fills */
+  --tint-coral:   #B6CBD0;
+  --tint-apricot: #CFDEE1;
+  --tint-blush:   #D9E5E7;
+  --tint-cream:   #E4EDEE;
+  --tint-whisper: #EFF4F4;
+
+  /* Neutrals — cooled to sit with slate instead of the warm original greys */
+  --neutral-0:   #FFFFFF;
+  --neutral-50:  #F7F9F9;
+  --neutral-100: #EDF1F2;
+  --neutral-200: #DCE4E6;
+  --neutral-300: #C1CDD0;
+  --neutral-400: #97A6AA;
+  --neutral-500: #6C7B80;
+  --neutral-600: #526165;
+  --neutral-700: #3B4A4E;
+  --neutral-800: #232F32;
+  --neutral-900: #111B1E;
+
+  /* Focus ring & scrim follow the brand */
+  --ring:  rgba(56, 88, 96, 0.34);
+  --scrim: rgba(17, 27, 30, 0.56);
+
+  /* Brand glow — was coral */
+  --shadow-brand:    0 8px 24px rgba(56, 88, 96, 0.32);
+  --shadow-brand-sm: 0 2px 8px rgba(56, 88, 96, 0.26);
+
+  /* Shadows — retint from warm ink to slate ink */
+  --shadow-xs: 0 1px 2px rgba(17, 27, 30, 0.06);
+  --shadow-sm: 0 1px 2px rgba(17, 27, 30, 0.06), 0 2px 6px rgba(17, 27, 30, 0.06);
+  --shadow-md: 0 2px 4px rgba(17, 27, 30, 0.05), 0 8px 20px rgba(17, 27, 30, 0.09);
+  --shadow-lg: 0 4px 8px rgba(17, 27, 30, 0.06), 0 18px 40px rgba(17, 27, 30, 0.13);
+  --shadow-xl: 0 8px 16px rgba(17, 27, 30, 0.08), 0 30px 64px rgba(17, 27, 30, 0.17);
+}
+
+/* Dark sections: keep the inverse scope, cool its surfaces */
+[data-theme="inverse"] {
+  --surface-sunken: #182226;
+  --surface-hover:  #2C3A3E;
+}

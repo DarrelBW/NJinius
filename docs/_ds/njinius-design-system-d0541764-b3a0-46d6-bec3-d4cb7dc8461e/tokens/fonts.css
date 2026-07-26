@@ -1,0 +1,5 @@
+/* njinius webfonts — SUBSTITUTES (see readme.md → Typography).
+   The real wordmark uses a rounded, slightly-squared geometric sans we did not
+   receive as a file. Rubik is the closest widely-available match; replace these
+   @import + families with the licensed brand font when available. */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..800;1,400..600&family=Hanken+Grotesk:wght@400..800&family=JetBrains+Mono:wght@400..700&display=swap');

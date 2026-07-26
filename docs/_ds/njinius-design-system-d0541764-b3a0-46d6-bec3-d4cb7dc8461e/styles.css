@@ -1,0 +1,11 @@
+/* ==========================================================================
+   njinius Design System — global entry point.
+   Consumers link THIS file only. It is a manifest of @imports; add new token
+   or foundation files here so they ship to every consuming project.
+   ========================================================================== */
+@import "tokens/fonts.css";
+@import "tokens/colors.css";
+@import "tokens/typography.css";
+@import "tokens/spacing.css";
+@import "tokens/effects.css";
+@import "base.css";

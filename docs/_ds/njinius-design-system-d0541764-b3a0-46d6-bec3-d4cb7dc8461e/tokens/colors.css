@@ -1,0 +1,119 @@
+/* ==========================================================================
+   njinius — Colour tokens
+   Warm, coral-anchored palette derived from the brand logo (a wordmark
+   supplied in five coral/peach tints). Coral is the hero; neutrals are warm-
+   tinted; semantics tuned to sit beside coral without clashing.
+   ========================================================================== */
+:root {
+  /* --- Brand: Coral ramp (hero) -------------------------------------------
+     500 is the action colour. 200 ≈ the supplied #FBB5A7 tint. */
+  --coral-50:  #FEF3EF;
+  --coral-100: #FCDDD3;
+  --coral-200: #FBBFAF;
+  --coral-300: #F89A82;
+  --coral-400: #F57C60;
+  --coral-500: #F0603F;
+  --coral-600: #DB4E30;
+  --coral-700: #B23D26;
+  --coral-800: #85301F;
+  --coral-900: #562018;
+
+  /* --- Brand: Apricot ramp (secondary warm accent, from supplied #FEC89A) -- */
+  --apricot-100: #FFECD4;
+  --apricot-200: #FEDBB3;
+  --apricot-300: #FEC89A;
+  --apricot-400: #FBAE68;
+  --apricot-500: #F5923B;
+
+  /* --- Supplied logo tints (kept verbatim for washes & marketing fills) ---- */
+  --tint-coral:   #FBB5A7;  /* PNG_2 */
+  --tint-apricot: #FEC89A;  /* PNG_3 */
+  --tint-blush:   #FAD5CE;  /* PNG   */
+  --tint-cream:   #F9DCC4;  /* PNG_1 */
+  --tint-whisper: #F5EDEB;  /* PNG_4 */
+
+  /* --- Neutrals: warm-tinted greys ---------------------------------------- */
+  --neutral-0:   #FFFFFF;
+  --neutral-50:  #FAF7F5;
+  --neutral-100: #F4EFEC;
+  --neutral-200: #E9E2DD;
+  --neutral-300: #D8CFC8;
+  --neutral-400: #B7ABA3;
+  --neutral-500: #8F8179;
+  --neutral-600: #6B5D56;
+  --neutral-700: #4C403A;
+  --neutral-800: #302823;
+  --neutral-900: #1C1614;
+
+  /* --- Semantic ramps ----------------------------------------------------- */
+  --success-100: #DCF3E8; --success-500: #1F9D6B; --success-700: #14724C;
+  --warning-100: #FBEBCB; --warning-500: #E39A15; --warning-700: #A66E08;
+  --danger-100:  #FADFDA; --danger-500:  #D8452F; --danger-700:  #9E2C1C;
+  --info-100:    #DEE8FD; --info-500:    #2F6FE4; --info-700:    #1B4CAA;
+
+  /* ======================================================================
+     SEMANTIC ALIASES — prefer these in components
+     ====================================================================== */
+  /* Brand */
+  --brand:          var(--coral-500);
+  --brand-hover:    var(--coral-600);
+  --brand-active:   var(--coral-700);
+  --brand-soft:     var(--coral-100);
+  --brand-tint:     var(--coral-50);
+  --brand-strong:   var(--coral-700);
+  --on-brand:       #FFFFFF;
+
+  /* Surfaces */
+  --surface-page:    var(--neutral-50);
+  --surface-card:    var(--neutral-0);
+  --surface-sunken:  var(--neutral-100);
+  --surface-hover:   var(--neutral-100);
+  --surface-inverse: var(--neutral-900);
+  --surface-brand:   var(--coral-500);
+  --scrim:           rgba(28, 22, 20, 0.56);
+
+  /* Text */
+  --text-strong:   var(--neutral-900);
+  --text-body:     var(--neutral-700);
+  --text-muted:    var(--neutral-500);
+  --text-subtle:   var(--neutral-400);
+  --text-inverse:  var(--neutral-0);
+  --text-brand:    var(--coral-700);
+  --text-on-brand: #FFFFFF;
+
+  /* Borders */
+  --border-subtle: var(--neutral-200);
+  --border:        var(--neutral-300);
+  --border-strong: var(--neutral-400);
+  --border-brand:  var(--coral-500);
+  --ring:          rgba(240, 96, 63, 0.32);   /* focus ring, coral */
+
+  /* Status foreground/background pairs */
+  --success-fg: var(--success-700); --success-bg: var(--success-100);
+  --warning-fg: var(--warning-700); --warning-bg: var(--warning-100);
+  --danger-fg:  var(--danger-700);  --danger-bg:  var(--danger-100);
+  --info-fg:    var(--info-700);    --info-bg:    var(--info-100);
+
+  /* Links */
+  --link:       var(--coral-700);
+  --link-hover: var(--coral-800);
+}
+
+/* Inverse scope — use on dark/hero sections (data-theme="inverse") */
+[data-theme="inverse"] {
+  --surface-page:   var(--neutral-900);
+  --surface-card:   var(--neutral-800);
+  --surface-sunken: #241D1A;
+  --surface-hover:  #3a302b;
+  --text-strong:    var(--neutral-0);
+  --text-body:      var(--neutral-200);
+  --text-muted:     var(--neutral-400);
+  --border-subtle:  rgba(255,255,255,0.10);
+  --border:         rgba(255,255,255,0.16);
+  --border-strong:  rgba(255,255,255,0.28);
+  --link:           var(--coral-300);
+  --link-hover:     var(--coral-200);
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 0.15em; }
