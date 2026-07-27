@@ -47,12 +47,26 @@ Find the UUID `667740cc-8618-40e8-89fe-4ee4cd501dfd` in `docs/index.html` and re
 with the new one. It appears once. (The code checks the value is a valid UUID; if it is
 not, the form falls back to opening a pre-filled email draft to support@njinius.com.)
 
+### Spam protection — one step left
+
+The form includes an **hCaptcha** checkbox (Web3Forms' shared free site key, loaded from
+hCaptcha's own servers). To make it actually enforced:
+
+1. Sign in at **https://app.web3forms.com**.
+2. Open your form → **Settings** → **Block Spam**.
+3. Set the captcha option to **hCaptcha** and save.
+
+Until that is switched on, the checkbox still appears and is required client-side, but
+Web3Forms will not reject submissions that bypass it.
+
 ### What the visitor sees
 
+- The hCaptcha checkbox must be ticked before the form will send.
 - Button shows "Sending…" while in flight.
 - Success → the green "Thank you — message received" panel.
 - Failure → a red panel telling them to email support@njinius.com instead.
-- A hidden honeypot field filters basic bots; Web3Forms adds spam filtering on top.
+- A hidden honeypot field filters basic bots; hCaptcha and Web3Forms' own filtering sit
+  on top.
 
 ### Optional extras
 
@@ -106,6 +120,7 @@ The five Digital Logbook screenshots are **inlined into `index.html`** — nothi
 from an external CDN. The only outbound requests are:
 
 - Fonts (Rubik, Hanken Grotesk) load from Google Fonts.
+- hCaptcha loads from `js.hcaptcha.com` when the page opens.
 - The hero uses the brand gradient only — the image drop-target is removed from the
   build. Send the workplace photo or video and it can be baked in.
 
